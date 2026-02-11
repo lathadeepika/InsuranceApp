@@ -45,12 +45,13 @@ input_data = np.array([[
 ]])
 
 # Apply scaling if used
-if scaler:
-    input_data = scaler.transform(input_data)
+if scalar:
+    input_data = scalar.transform(input_data)
 
 # Predict
 if st.button("Predict Insurance Cost"):
     prediction = model.predict(input_data)
     st.success(f"Estimated Insurance Cost: ₹ {prediction[0]:,.2f}")
+
 
 
