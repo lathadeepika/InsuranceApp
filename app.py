@@ -8,7 +8,7 @@ with open("New_RFmodel.pkl", "rb") as f:
 
 # Load scaler if used
 try:
-    with open("New_scaler.pkl", "rb") as f:
+    with open("scalar.pkl", "rb") as f:
         scaler = pickle.load(f)
 except:
     scaler = None
@@ -52,3 +52,4 @@ if scaler:
 if st.button("Predict Insurance Cost"):
     prediction = model.predict(input_data)
     st.success(f"Estimated Insurance Cost: ₹ {prediction[0]:,.2f}")
+
